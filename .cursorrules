@@ -1,0 +1,143 @@
+// Vue 3 Composition API .cursorrules.js
+
+// Project Configuration
+const projectConfig = {
+  name: "Vue 3 Composition API Project",
+  framework: "Vue 3",
+  language: "JavaScript/TypeScript",
+  buildTool: "Vite",
+};
+
+// Vue 3 Composition API Best Practices
+const vue3CompositionApiBestPractices = [
+  "Use setup() function for component logic",
+  "Utilize ref and reactive for reactive state",
+  "Implement computed properties with computed()",
+  "Use watch and watchEffect for side effects",
+  "Implement lifecycle hooks with onMounted, onUpdated, etc.",
+  "Utilize provide/inject for dependency injection",
+  "Prefer composition functions over mixins",
+  "Keep components small and focused",
+  "Use meaningful and descriptive variable names",
+];
+
+// Recommended Folder Structure
+const folderStructure = {
+  root: "src/",
+  directories: [
+    "components/",
+    "composables/",
+    "views/",
+    "router/",
+    "store/",
+    "assets/",
+    "utils/",
+    "types/",
+  ],
+  mainFiles: ["App.vue", "main.js", "main.ts"],
+};
+
+// Code Generation Guidelines
+const codeGenerationGuidelines = {
+  componentGeneration: {
+    preferredStyle: "Composition API",
+    requiredImports: [
+      'import { ref, reactive, computed, watch, onMounted } from "vue"',
+    ],
+    componentStructure: `
+  export default defineComponent({
+    name: 'ComponentName',
+    props: {
+      // Props definition
+    },
+    emits: [
+      // Emitted events
+    ],
+    setup(props, { emit }) {
+      // Component logic here
+      return {
+        // Exposed properties and methods
+      }
+    }
+  })
+      `,
+  },
+  stateManagement: {
+    preferredStore: "Pinia",
+    storeTemplate: `
+  import { defineStore } from 'pinia'
+  
+  export const useStoreName = defineStore('storeName', {
+    state: () => ({
+      // Initial state
+    }),
+    getters: {
+      // Computed state
+    },
+    actions: {
+      // Methods to modify state
+    }
+  })
+      `,
+  },
+  apiHandling: {
+    preferredHttpClient: "Axios",
+    errorHandling: "Global error interceptor",
+    requestTemplate: `
+  import axios from 'axios'
+  
+  const request = axios.create({
+    baseURL: import.meta.env.VITE_API_BASE_URL,
+    timeout: 10000
+  })
+  
+  request.interceptors.request.use(
+    config => {
+      // Add authentication token
+      return config
+    },
+    error => Promise.reject(error)
+  )
+  
+  request.interceptors.response.use(
+    response => response.data,
+    error => {
+      // Global error handling
+      return Promise.reject(error)
+    }
+  )
+  
+  export default request
+      `,
+  },
+};
+
+// Performance Optimization Guidelines
+const performanceGuidelines = [
+  "Use v-once for static content",
+  "Implement lazy loading for routes",
+  "Use keep-alive for component caching",
+  "Minimize reactivity for large data sets",
+  "Use functional components when possible",
+  "Avoid unnecessary re-renders",
+];
+
+// Linting and Code Style
+const lintingAndCodeStyle = {
+  indentation: 2,
+  quotes: "single",
+  semicolon: true,
+  trailingComma: "es5",
+  maxLineLength: 80,
+  preferredESLintConfig: "vue/recommended",
+};
+
+// Export the configuration
+module.exports = {
+  projectConfig,
+  vue3CompositionApiBestPractices,
+  folderStructure,
+  codeGenerationGuidelines,
+  performanceGuidelines,
+  lintingAndCodeStyle,
+};
