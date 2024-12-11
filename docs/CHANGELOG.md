@@ -1,6 +1,6 @@
 # 更新日志
 
-## [未发布] - 2024-12-11
+## [0.2.0] - 2024-12-11
 
 ### 新增
 
@@ -16,7 +16,16 @@
 
 - 从 Tailwind CSS 迁移到 UnoCSS
 
-## [未发布] - 2024-12-11
+### 技术栈
+
+- Vue 3 + Vite
+- uni-app
+- Pinia
+- Axios
+- UnoCSS
+- uView Plus
+
+## [0.1.0] - 2024-12-11
 
 ### 新增
 
@@ -45,7 +54,7 @@
 - Pinia
 - Axios
 - UnoCSS
-- uview-plus
+- uView Plus
 
 ### 项目结构
 
