@@ -2,8 +2,8 @@
 
 // Project Configuration
 const projectConfig = {
-  name: "Vue 3 Composition API Project",
-  framework: "Vue 3",
+  name: "Uni-App with uView Plus",
+  framework: "uni-app",
   language: "JavaScript/TypeScript",
   buildTool: "Vite",
 };
@@ -19,6 +19,7 @@ const vue3CompositionApiBestPractices = [
   "Prefer composition functions over mixins",
   "Keep components small and focused",
   "Use meaningful and descriptive variable names",
+  "Leverage uView Plus components for UI consistency",
 ];
 
 // Recommended Folder Structure
@@ -33,6 +34,7 @@ const folderStructure = {
     "assets/",
     "utils/",
     "types/",
+    "styles/", // 新增样式目录
   ],
   mainFiles: ["App.vue", "main.js", "main.ts"],
 };
@@ -43,6 +45,7 @@ const codeGenerationGuidelines = {
     preferredStyle: "Composition API",
     requiredImports: [
       'import { ref, reactive, computed, watch, onMounted } from "vue"',
+      'import { defineComponent } from "uview-plus"', // 引入 uView Plus
     ],
     componentStructure: `
   export default defineComponent({
@@ -120,6 +123,7 @@ const performanceGuidelines = [
   "Minimize reactivity for large data sets",
   "Use functional components when possible",
   "Avoid unnecessary re-renders",
+  "Utilize Unocss for atomic CSS to reduce file size and improve performance",
 ];
 
 // Linting and Code Style
@@ -132,6 +136,9 @@ const lintingAndCodeStyle = {
   preferredESLintConfig: "vue/recommended",
 };
 
+// Unocss Configuration
+const unocssConfig = require("./unocss.config.js"); // 引用您的 Unocss 配置
+
 // Export the configuration
 module.exports = {
   projectConfig,
@@ -140,4 +147,5 @@ module.exports = {
   codeGenerationGuidelines,
   performanceGuidelines,
   lintingAndCodeStyle,
+  unocssConfig, // 导出您的 Unocss 配置
 };
