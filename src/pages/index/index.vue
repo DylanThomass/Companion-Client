@@ -57,14 +57,18 @@ const silentLogin = async () => {
       method: "POST",
       data: { code },
     });
-    console.log("res", res);
 
     // 3. 保存登录信息
     if (res.code === 200) {
       userStore.setToken(res.data.token);
       userStore.setUserInfo({
         openid: res.data.openid,
+        nickname: res.data.nickname,
+        avatar: res.data.avatar,
+        exp: res.data.exp,
+        userType: 2,
         sessionKey: res.data.sessionKey,
+        phone: null,
       });
     }
   } catch (error) {
